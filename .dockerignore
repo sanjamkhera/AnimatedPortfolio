@@ -1,0 +1,21 @@
+# Ignore node modules
+node_modules
+
+# Ignore build output
+/build
+
+# Ignore .git and .env files
+.git
+.env
+
+# Ignore logs
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# Ignore IDE specific files
+.idea
+.vscode
+*.swp
+*.swo
+*.sublime-*
