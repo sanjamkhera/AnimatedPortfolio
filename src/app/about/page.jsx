@@ -32,13 +32,13 @@ const AboutPage = () => {
             {/* BIOGRAPHY TITLE */}
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
             {/* BIOGRAPHY DESC*/}
-            <p className="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis facere ab adipisci obcaecati, quaerat ex temporibus soluta aliquam beatae nobis nam ratione dolore omnis non veniam ipsum! Quasi, dolorum quo.</p>
+            <p className="text-lg">Software developer with seven years of experience working in design.</p>
             {/* BIOGRAPHY QUOTE*/}
-            <span className="italic">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus, minus!</span>
+            {/* <span className="italic">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus, minus!</span> */}
             {/* BIOGRAPHY SIGN SVG*/}
-            <div className=''>
+            {/* <div className=''>
               We dint need a signature.
-            </div>
+            </div> */}
             {/* BIOGRAPHY SCROLL SVG*/}
             <motion.svg
               initial={{ opacity: 0.2, y: 0 }}
