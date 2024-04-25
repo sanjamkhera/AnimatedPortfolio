@@ -56,14 +56,14 @@ CMD npm start
 # Create a new stage for the development environment, using the base stage as a starting point
 FROM base as dev
 
-# Set the NODE_ENV environment variable to 'development'
-ENV NODE_ENV=development
+# # Set the NODE_ENV environment variable to 'development'
+# ENV NODE_ENV=development
 
-# Install all dependencies
-RUN npm install 
+# # Install all dependencies
+# RUN npm install 
 
-# Copy all files from the current directory to the working directory in the dev stage
-COPY . .
+# # Copy all files from the current directory to the working directory in the dev stage
+# COPY . .
 
-# Start the app in development mode
-CMD npm run dev
+# # Start the app in development mode
+# CMD npm run dev
