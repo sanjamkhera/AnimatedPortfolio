@@ -39,4 +39,4 @@ This workflow is triggered manually (`workflow_dispatch`). The workflow has a si
 
 2. **Generate deployment package**: This step creates a zip file named `deploy.zip` that contains the application code, excluding certain directories like `.git`, `.github`, `node_modules`, and any existing `deploy.zip` file.
 
-3. **Deploy to Elastic Beanstalk**: This step uses the `einaregilsson/beanstalk-deploy@v14` action to deploy the application to AWS Elastic Beanstalk. It uses AWS access key and secret access key stored in GitHub secrets. The application is deployed to the `portfolio-app` application and `Portfolio-app-env` environment in the `us-east-1` region. The deployment package is the `deploy.zip` file created in the previous step. The version label for the deployment is the SHA of the commit that triggered the workflow.
+3. **Deploy to Elastic Beanstalk**: This step uses the `einaregilsson/beanstalk-deploy@v14` action to deploy the application to AWS Elastic Beanstalk. It uses AWS access key and secret access key stored in GitHub secrets. The application is deployed to the `portfolio-app` application and `Portfolio-app-env` environment in the `us-east-1` region.
