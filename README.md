@@ -1,4 +1,4 @@
-# Sanjam Khera's Professional Portfolio
+# Portfolio
 
 This portfolio website showcases my skills, work history, and projects.
 
