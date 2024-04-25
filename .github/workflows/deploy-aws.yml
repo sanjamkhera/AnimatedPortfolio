@@ -1,0 +1,43 @@
+name: Deploy Next.js to AWS
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2 # It will clone the repo
+
+    - name: Generate deployment package
+      run: zip -r deploy.zip . -x '*.git*' -x '*.github*' -x '*node_modules*' -x '*Dockerfile*' -x '*docker-compose.yml*' -x '*deploy.zip*'
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: Build, tag, and push image to Amazon ECR
+      id: build-image
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REPOSITORY: my-ecr-repo
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+    - name: Deploy to Elastic Beanstalk
+      uses: einaregilsson/beanstalk-deploy@v14
+      with:
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        application_name: portfolio-app
+        environment_name: Portfolio-app-env
+        version_label: ${{ github.sha }}
+        existing_bucket_name: elasticbeanstalk-us-east-1-533267198987
+        region: us-east-1
+        deployment_package: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
