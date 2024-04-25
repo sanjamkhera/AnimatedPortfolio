@@ -22,5 +22,6 @@ jobs:
         application_name: portfolio-app
         environment_name: Portfolio-app-env
         version_label: ${{ github.sha }}
+        existing_bucket_name: elasticbeanstalk-us-east-1-533267198987
         region: us-east-1
         deployment_package: deploy.zip
