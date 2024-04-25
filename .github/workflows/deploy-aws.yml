@@ -26,4 +26,4 @@ jobs:
         version_label: ${{ github.sha }}
         existing_bucket_name: elasticbeanstalk-us-east-1-533267198987
         region: us-east-1
-        deployment_package: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        deployment_package: deploy.zip
