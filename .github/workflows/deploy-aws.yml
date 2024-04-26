@@ -1,26 +1,39 @@
 name: Deploy Next.js to AWS
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2 # It will clone the repo
 
-    - name: Generate deployment package
-      run: zip -r deploy.zip . -x '*.git*'
+    - name: Create .env file
+      run: echo "SITE_URL= ${{ secrets.SITE_URL }}" >> .env
 
-    - name: Deploy to Elastic Beanstalk
-      uses: einaregilsson/beanstalk-deploy@v14
-      with:
-        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        application_name: portfolio-app
-        environment_name: Portfolio-app-env
-        version_label: ${{ github.sha }}
-        region: us-east-1
-        deployment_package: deploy.zip
+    - name: Build docker image 
+      run: docker build -t sanjamkhera/portfolio-app .
+
+    - name: Login to DockerHub
+      run: docker login -u ${{ secrets.sanjamkhera }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Push docker image to DockerHub
+      run: docker push sanjamkhera/portfolio-app:latest
+
+  deploy:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: Pull image from DockerHub
+        run: docker pull sanjamkhera/portfolio-app:latest
+
+      - name: Stop and remove existing container
+        run: docker rm -f portfolio-app-conatiner
+
+      - name: Run docker container
+        run: docker run -d -p 3000:3000 --name portfolio-app-conatiner sanjamkhera/portfolio-app:latest
