@@ -29,11 +29,11 @@ jobs:
     needs: build
     runs-on: self-hosted
     steps:
-      - name: Pull image from DockerHub
+      - name: Pull image from docker hub
         run: docker pull sanjamkhera/portfolio-app:latest
 
-      - name: Stop and remove existing container
+      - name: Delete old container
         run: docker rm -f portfolio-app-conatiner
 
       - name: Run docker container
-        run: docker run -d -p 3000:3000 --name portfolio-app-conatiner sanjamkhera/portfolio-app:latest
+        run: docker run -d -p 3000:3000 --name portfolio-app-conatiner sanjamkhera/portfolio-app
