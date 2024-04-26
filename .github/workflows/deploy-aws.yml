@@ -20,7 +20,7 @@ jobs:
       run: docker build -t sanjamkhera/portfolio-app .
 
     - name: Login to DockerHub
-      run: docker login -u ${{ secrets.sanjamkhera }} -p ${{ secrets.DOCKER_PASSWORD }}
+      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Push docker image to DockerHub
       run: docker push sanjamkhera/portfolio-app:latest
