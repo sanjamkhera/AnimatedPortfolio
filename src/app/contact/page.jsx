@@ -99,10 +99,10 @@ const ContactPage = () => {
         {/* SOCIAL LINKS */}
           <div className='sm:mt-12 h-1/5 flex flex-row gap-4 md:mt-24'>
             <Link href="https://github.com/sanjamkhera">
-                <Image src="/github.png" alt="" width={48} height={48} />
+                <Image src="/AnimatedPortfolio/github.png" alt="" width={48} height={48} />
             </Link>
             <Link href="https://linkedin.com/in/sanjkhera">
-                <Image src="/linkedin.png" alt="" width={48} height={48} />
+                <Image src="/AnimatedPortfolio/linkedin.png" alt="" width={48} height={48} />
             </Link>
           </div>
       </div>
