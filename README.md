@@ -9,7 +9,7 @@ The website was built using a variety of modern technologies:
   - Next.js (for server-side rendering)
   - Tailwind CSS (for styling)
   - JavaScript (programming language)
-  - AWS Elastic EC2 (for deployment), Also deployed on Github Pages: [https://sanjamkhera.github.io/AnimatedPortfolio/home] Website Link
+  - AWS Elastic EC2 (for deployment), Also deployed on Github Pages: [https://sanjamkhera.github.io/AnimatedPortfolio/] Website Link
   - Docker (for containerization)
 
 ## Contents of the Package
