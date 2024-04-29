@@ -9,7 +9,7 @@ The website was built using a variety of modern technologies:
   - Next.js (for server-side rendering)
   - Tailwind CSS (for styling)
   - JavaScript (programming language)
-  - AWS Elastic Beanstalk (for deployment)
+  - AWS Elastic EC2 (for deployment), Also deployed on Github Pages: [https://sanjamkhera.github.io/AnimatedPortfolio/home] Website Link
   - Docker (for containerization)
 
 ## Contents of the Package
@@ -39,4 +39,4 @@ This workflow is triggered manually (`workflow_dispatch`). The workflow has a si
 
 2. **Generate deployment package**: This step creates a zip file named `deploy.zip` that contains the application code, excluding certain directories like `.git`, `.github`, `node_modules`, and any existing `deploy.zip` file.
 
-3. **Deploy to Elastic Beanstalk**: This step uses the `einaregilsson/beanstalk-deploy@v14` action to deploy the application to AWS Elastic Beanstalk. It uses AWS access key and secret access key stored in GitHub secrets. The application is deployed to the `portfolio-app` application and `Portfolio-app-env` environment in the `us-east-1` region.
+3. **Deploy to AWS**: This step uses the AWS EC2 Server for Deployement. It uses AWS access key and secret access key stored in GitHub secrets.
