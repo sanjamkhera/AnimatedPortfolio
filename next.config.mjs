@@ -14,8 +14,7 @@ const nextConfig = {
       }
     ]
   },
-
-  basePath: '/AnimatedPortfolio',
+  assetPrefix: process.env.BASE_PATH || '',
 };
 
 export default nextConfig;
