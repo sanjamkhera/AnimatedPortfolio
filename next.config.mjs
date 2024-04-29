@@ -14,6 +14,9 @@ const nextConfig = {
       }
     ]
   },
+  // Use the prefix for GitHub Pages
+  basePath: '/AnimatedPortfolio',
+  assetPrefix: '/AnimatedPortfolio/',
 };
 
 export default nextConfig;
