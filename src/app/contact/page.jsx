@@ -102,7 +102,7 @@ const ContactPage = () => {
                 <Image src="/AnimatedPortfolio/github.png" alt="" width={48} height={48} />
             </Link>
             <Link href="https://linkedin.com/in/sanjkhera">
-                <Image src="/linkedin.png" alt="" width={48} height={48} />
+                <Image src="/AnimatedPortfolio/linkedin.png" alt="" width={48} height={48} />
             </Link>
           </div>
       </div>
