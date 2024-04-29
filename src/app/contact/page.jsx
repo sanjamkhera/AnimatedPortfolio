@@ -44,7 +44,7 @@ const ContactPage = () => {
     >
       <div className="h-full flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-20">
         {/* TEXT CONTAINER */}
-        <div className="h-1/4 lg:w-1/2 flex items-center justify-center text-6xl">
+        <div className="h-1/4 lg:w-1/2 flex items-center justify-center text-4xl md:mt-4">
           <div>
             {text.split("").map((letter, index) => (
               <motion.span
@@ -67,7 +67,7 @@ const ContactPage = () => {
         <form
           onSubmit={sendEmail}
           ref={form}
-          className="h-2/3 sm:w-4/5 md:w-3/5 bg-gray-200 rounded-2xl text-l flex flex-col gap-8 justify-center px-8 py-4 mb-4"
+          className="h-2/3 sm:w-4/5 md:w-2/5 bg-gray-200 rounded-2xl text-l flex flex-col gap-8 justify-center px-8 py-4 mb-4"
         >
           <span>Your Message</span>
           <textarea
@@ -97,7 +97,7 @@ const ContactPage = () => {
           )}
         </form>          
         {/* SOCIAL LINKS */}
-          <div className='sm:mt-12 h-1/5 flex flex-row gap-4 md:mt-24'>
+          <div className='sm:mt-12 h-1/5 flex flex-row gap-4 md:mt-4'>
             <Link href="https://github.com/sanjamkhera">
                 <Image src="/AnimatedPortfolio/github.png" alt="" width={48} height={48} />
             </Link>

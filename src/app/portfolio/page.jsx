@@ -44,7 +44,7 @@ const items = [
     id: 5,
     color: "from-violet-100 to-red-100",
     title: "Processor Simulation",
-    desc: "The program employs an MLFQ scheduling policy with each CPU as a thread. Tasks start at the system's beginning, using a start clock without a buffer. The Scheduler initializes CPU threads, while the Dispatcher manages task availability, and tasks are executed sequentially by CPU threads, updating attributes before reinsertion or moving to the \"done\" area if incomplete.",
+    desc: "The program employs an MLFQ scheduling policy with each CPU as a thread. The Scheduler initializes CPU threads, while the Dispatcher manages task availability, and tasks are executed sequentially by CPU threads, updating attributes before reinsertion or moving to the \"done\" area if incomplete.",
     img: "https://cdn.pixabay.com/photo/2020/02/03/00/12/fiber-4814456_1280.jpg",
     link: "https://github.com/sanjamkhera/Processor-Simulation.git",
   },
@@ -52,7 +52,7 @@ const items = [
 
 const PortfolioPage = () => {
   const ref = useRef();
-  
+
 
   const { scrollYProgress } = useScroll({ target: ref });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-83%"]);
@@ -76,11 +76,11 @@ const PortfolioPage = () => {
                 className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                 key={item.id}
               >
-                <div className="flex flex-col gap-8 text-black items-start bg-white p-10 rounded-xl">
-                  <h2 className="text-xl font-medium md:text-2xl lg:text-4xl">
+                <div className="flex flex-col gap-8 text-black items-start justify-center bg-white p-10 rounded-xl w-auto h-auto">
+                  <h2 className="text-xl font-semibold md:text-2xl">
                     {item.title}
                   </h2>
-                  <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
+                  <div className="relative w-80 h-56 md:w-84 md:h-56 self-center">
                     <Image src={item.img} alt="" fill className="rounded-xl" />
                   </div>
                   <p className="w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px] text-left flex items-center">
@@ -116,11 +116,12 @@ const PortfolioPage = () => {
               </textPath>
             </text>
           </motion.svg>
-          <Link
-            href="/contact"
-            className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-white rounded-full flex items-center justify-center"
-          >
-            Hire Me
+          <Link href="/contact" passHref>
+            <div className="w-20 h-20 md:w-36 md:h-36 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-white rounded-full flex items-center justify-center">
+              <button className="w-full h-full rounded-full flex items-center justify-center">
+                Hire Me
+              </button>
+            </div>
           </Link>
         </div>
       </div>
