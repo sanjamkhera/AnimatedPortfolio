@@ -14,6 +14,8 @@ const nextConfig = {
       }
     ]
   },
+
+  basePath: '/AnimatedPortfolio',
 };
 
 export default nextConfig;
