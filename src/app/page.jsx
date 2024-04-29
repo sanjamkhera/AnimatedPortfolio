@@ -40,16 +40,15 @@ const Homepage = () => {
             This portfolio website showcases my skills, work history, and projects. I use various modern technologies i.e.
             React.js is utilized for UI components, Framer Motion for animations, and Next.js for server-side rendering.
             Styling is achieved through Tailwind CSS, and the programming language used is JavaScript.
-            Deployment is handled using AWS Elastic Beanstalk, with Docker providing containerization.
+            Deployment is handled using AWS EC2 and GitHub Actions, with Docker for containerization. 
           </p>
           <p className="text-sm mt-2">
-            The websites content includes four pages About Me, Contact Information, Portfolio Showcase, Home, Brain (dedicated to SVG),
-            Navigation Bar, Navigation Links, and Transition Provider.
+            The websites components include four pages About, Contact, Portfolio, Home, a Brain (dedicated to SVG) component, Navigation Bar, Navigation Links, and Transition Provider.
             DevOps files like Dockerfile and docker-compose.yml are included for creating a Docker image and defining services, networks, and volumes.
           </p>
           <p className="text-sm mt-2">
-            For CI/CD, the deploy-aws.yml file triggers a manual workflow that clones the repository, generates a deployment package excluding certain directories,
-            and deploys the application to AWS Elastic Beanstalk using GitHub secrets for access keys.
+            For CI/CD, the deploy-aws.yml file triggers a manual and automatic (For CI/CD on Github Actions) workflow that clones the repository, generates a deployment package,
+            and deploys the application to GitHub Pages and AWS.
           </p>
         </div>
       </div>
