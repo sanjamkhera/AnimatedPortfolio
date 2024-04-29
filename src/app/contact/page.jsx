@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import Link from 'next/link';
+import Image from "next/image";
 
 const ContactPage = () => {
   const [success, setSuccess] = useState(false);
@@ -40,9 +42,9 @@ const ContactPage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
+      <div className="h-full flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-20">
         {/* TEXT CONTAINER */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 flex items-center justify-center text-6xl">
+        <div className="h-1/4 lg:w-1/2 flex items-center justify-center text-6xl">
           <div>
             {text.split("").map((letter, index) => (
               <motion.span
@@ -65,22 +67,22 @@ const ContactPage = () => {
         <form
           onSubmit={sendEmail}
           ref={form}
-          className="h-1/2 lg:h-full lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-24"
+          className="h-2/3 sm:w-4/5 md:w-3/5 bg-gray-200 rounded-2xl text-l flex flex-col gap-8 justify-center px-8 py-4 mb-4"
         >
-          <span>Hi Sanjam,</span>
+          <span>Your Message</span>
           <textarea
             rows={6}
             className="bg-transparent border-b-2 border-b-black outline-none resize-none"
             name="user_message"
           />
-          <span>My mail address is:</span>
+          <span>Your email Address</span>
           <input
             name="user_email"
             type="text"
             className="bg-transparent border-b-2 border-b-black outline-none"
           />
           <span>Regards</span>
-          <button className="bg-purple-200 rounded font-semibold text-gray-600 p-4">
+          <button className="bg-purple-200 rounded-lg font-semibold text-gray-600 p-4">
             Send
           </button>
           {success && (
@@ -93,8 +95,18 @@ const ContactPage = () => {
               Something went wrong!
             </span>
           )}
-        </form>
+        </form>          
+        {/* SOCIAL LINKS */}
+          <div className='sm:mt-12 h-1/5 flex flex-row gap-4 md:mt-24'>
+            <Link href="https://github.com/sanjamkhera">
+                <Image src="/github.png" alt="" width={48} height={48} />
+            </Link>
+            <Link href="https://linkedin.com/in/sanjkhera">
+                <Image src="/linkedin.png" alt="" width={48} height={48} />
+            </Link>
+          </div>
       </div>
+
     </motion.div>
   );
 };
