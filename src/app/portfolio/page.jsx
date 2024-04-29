@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
-import { useMediaQuery } from 'react-responsive';
 
 
 // Importing necessary libraries and hooks
