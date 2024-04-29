@@ -14,7 +14,7 @@ const Homepage = () => {
       <div className="h-1/3 flex flex-col gap-16 text-xl">
         {/* IMAGE CONTAINER */}
         <div className='h-1/2 mt-12 relative min-h-[100px] min-w-[250px]'>
-          <Image src="/hero.png" fill className="object-contain rounded-lg" />
+          <Image src="/hero.png" alt="my-image" fill className="object-contain rounded-lg" />
         </div>
         {/* TEXT CONTAINER */}
         <div className='h-1/2 flex flex-col items-center gap-8 justify-center '>
