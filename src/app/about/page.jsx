@@ -7,7 +7,6 @@ import { useRef } from "react";
 const AboutPage = () => {
 
   const containerRef = useRef();
-
   const { scrollYProgress } = useScroll({ container: containerRef });
 
   const skillRef = useRef();
@@ -15,6 +14,9 @@ const AboutPage = () => {
 
   const experienceRef = useRef();
   const isExperienceRefInView = useInView(experienceRef, { margin: "-100px" });
+
+  const blogRef = useRef();
+  const isBlogRefInView = useInView(blogRef, { margin: "-100px" });
 
   return (
     <motion.div
@@ -71,23 +73,6 @@ const AboutPage = () => {
               initial={{ x: "-300px" }}
               animate={isSkillRefInView ? { x: 0 } : {}}
               className='w-full flex gap-4 flex-wrap'>
-              <h3 className="font-bold text-xl">Development and Service</h3>
-              <div className='w-full flex gap-4 flex-wrap'>
-                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>Git</div>
-                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>npm</div>
-                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>VS Code</div>
-                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>Xcode</div>
-                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>CI/CD GitHub Actions</div>
-              </div>
-
-              <h3 className="w-full font-bold text-xl">Frameworks and Technologies</h3>
-              <div className='w-full flex gap-4 flex-wrap'>
-                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>AWS SDK</div>
-                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>Dockers</div>
-                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>Azure</div>
-                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>Unix / Linux</div>
-                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>OpenShift</div>
-              </div>
 
               <h3 className="w-full font-bold text-xl">Languages</h3>
               <div className='w-full flex gap-4 flex-wrap'>
@@ -107,6 +92,16 @@ const AboutPage = () => {
                 <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>Framer Motion</div>
               </div>
 
+
+              <h3 className="w-full font-bold text-xl">Frameworks and Technologies</h3>
+              <div className='w-full flex gap-4 flex-wrap'>
+                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>AWS SDK</div>
+                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>Dockers</div>
+                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>Azure</div>
+                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>Unix / Linux</div>
+                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>OpenShift</div>
+              </div>
+
               <h3 className="w-full font-bold text-xl">Design</h3>
               <div className='w-full flex gap-4 flex-wrap'>
                 <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>AutoCAD</div>
@@ -114,6 +109,15 @@ const AboutPage = () => {
                 <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>SolidWorks</div>
                 <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>On-Shape</div>
                 <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>Figma</div>
+              </div>
+
+              <h3 className="font-bold text-xl">Development and Service</h3>
+              <div className='w-full flex gap-4 flex-wrap'>
+                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>Git</div>
+                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>npm</div>
+                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>VS Code</div>
+                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>Xcode</div>
+                <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>CI/CD GitHub Actions</div>
               </div>
 
             </motion.div>
@@ -297,6 +301,42 @@ const AboutPage = () => {
                 <div className='w-1/3'></div>
               </div>
             </motion.div>
+          </div>
+          {/* BLOG CONTAINER */}
+          <div className='flex flex-col gap-12 justify-center' ref={blogRef}>
+            {/* BLOG TITLE */}
+            <motion.h1
+              initial={{ x: "-300px" }}
+              animate={isBlogRefInView ? { x: "0" } : {}}
+              transition={{ delay: 0.2 }}
+              className="font-bold text-2xl">
+              PERSONAL BLOG
+            </motion.h1>
+            <div className="container text-justify bg-white p-4 rounded-lg">
+              <h3 className="text-l font-bold">Computer Science, University of Manitoba</h3>
+              <p className="text-sm mt-2">In first year, We were introduced to the fundamentals of programming, algorithms, and data structures. I spent countless hours in the lab, debugging code and learning the intricacies of Python and Java.</p>
+              <p className="text-sm mt-2">In second year, we delved deeper. We studied advanced topics like operating systems, computer networks, and database systems. We also started working on his own projects, applying the theoretical knowledge he gained in practical scenarios.</p>
+              <p className="text-sm mt-2">By third year, We were well-versed in several programming languages and had a solid understanding of software development principles. We took elective courses in Artificial Intelligence and Machine Learning, which sparked his interest in data science.</p>
+              <p className="text-sm mt-2">In final year, We worked on various project as showcased in this portfolio.</p>
+              <p className="text-sm mt-2">Throughout the four years at the University of Manitoba, I not only acquired a strong foundation in Computer Science but also developed critical thinking and problem-solving skills that prepared him for the tech industry.</p>
+            </div>
+            <div className="container text-justify bg-white p-4 rounded-lg">
+              <h3 className="text-l font-bold">Mechanical Engineering Experience</h3>
+              <p className="text-sm mt-2">My journey in Mechanical Engineering began at Red River College, where I pursued a Mechanical Engineering Technology program.</p>
+              <p className="text-sm mt-2">My first professional experience was as a Controls Technician at Mikkelsen Coward, where I created wiring layouts and installation packages for electricians and developed sequences of operations for programmers.</p>
+              <p className="text-sm mt-2">I then moved on to VAW Systems as an Equipment Designer. Here, I worked with Project Managers and customers to interpret specifications, used 3D modeling tools like Inventor for design documentation, and created manufacturing packages using AutoCAD. I also took the initiative to automate repetitive tasks and worked on standardizing and improving existing product designs.</p>
+              <p className="text-sm mt-2">Most recently, I worked as a Mechanical Designer at K-HART Industries. I was part of the team that developed hydraulic systems for farm equipment and created macros for 3D modeling in On-Shape. I also managed version control using On-Shapes in-built release management and used tools like Sim-Solid for stress analysis and Odoo for operational management.</p>
+              <p className="text-sm mt-2">Throughout my career, I have worked on numerous projects, including the design of a hydraulic lift system for a farm seeding drill and the creation of drawing packages for over 1200 custom industrial silencers. I have also reverse-engineered a hydraulic bending machine and designed an industrial-sized bucket elevator for a farming application.</p>
+            </div>
+            <div className="container text-justify bg-white p-4 rounded-lg">
+              <h3 className="text-l font-bold">Moving to Vancouver</h3>
+              <p className="text-sm mt-2">Moving from Winnipeg, Manitoba, where I lived for over 12 years, to Vancouver was a significant transition in my life.</p>
+              <p className="text-sm mt-2">The move brought with it a mix of struggles and opportunities that are common for many students. Adapting to a new city meant finding my way around, adjusting to a different pace of life, and building a new social circle.</p>
+              <p className="text-sm mt-2">The weather in Vancouver, with its mild winters and beautiful summers, offered a stark contrast to the colder climate I was used to in Winnipeg. It was refreshing to experience the lush greenery and outdoor activities that Vancouver had to offer, including my passions for mountain biking and climbing.</p>
+              <p className="text-sm mt-2">Speaking of climbing, my recent accomplishment of climbing The Squamish Chief ten times. This challenge, fueled by determination and intensity, was not just about physical fitness but also about pushing my own limits and embracing a spiritual connection to the journey.</p>
+              <p className="text-sm mt-2">The Squamish Chief itself stands as a monumental symbol of challenge and natural beauty. Its massive granite structure attracts climbers globally, offering a unique experience that tests both skill and courage. Climbing its peaks was not just about conquering a physical obstacle but also about mastering my own inner hurdles, drawing strength from the symbolism and history that surrounded this remarkable natural wonder.</p>
+              <p className="text-sm mt-2">My move to Vancouver is a pivotal moment in my life, filled with challenges, opportunities, and personal growth. Embracing the outdoors, pursuing my passions, and undertaking challenges like climbing The Squamish Chief have all contributed to shaping my journey and my experiences in this vibrant city.</p>
+            </div>
           </div>
         </div>
         {/* SVG CONTAINER */}
