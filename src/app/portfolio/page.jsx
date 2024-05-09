@@ -1,8 +1,7 @@
 "use client";
 // Importing necessary libraries and hooks
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { useRef } from "react";
 
 

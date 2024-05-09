@@ -1,9 +1,7 @@
 "use client"
 
 import Brain from "@/components/brain";
-import Image from "next/image";
 import { motion, useInView, useScroll } from "framer-motion"
-import Link from 'next/link';
 import { useRef } from "react";
 
 const Homepage = () => {
