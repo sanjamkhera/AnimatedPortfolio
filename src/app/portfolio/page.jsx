@@ -1,8 +1,7 @@
 "use client";
 // Importing necessary libraries and hooks
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
 
 
 const items = [
@@ -64,8 +63,7 @@ const items = [
 ];
 
 const PortfolioPage = () => {
-  const containerRef = useRef();
-  const { scrollYProgress } = useScroll({ container: containerRef });
+
 
   return (
     <motion.div
@@ -74,7 +72,7 @@ const PortfolioPage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}>
 
-      <div className='flex flex-col items-center justify-center pb-24' ref={containerRef}>
+      <div className='flex flex-col items-center justify-center pb-24'>
 
         <div className={`w-4/5 md:w-3/5 lg:w-4/5 mt-24 grid grid-cols-1 lg:grid-cols-2 gap-24`} >
           {items.map((item) => (
